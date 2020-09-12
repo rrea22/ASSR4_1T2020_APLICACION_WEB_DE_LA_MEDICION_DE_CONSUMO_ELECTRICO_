@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<body>
+    <div class="botones">
+        <button class="large" (click)="perfil()" type="button" >Mi Perfil</button>
+        <button class="large" (click)="logout()" type="button" >Cerrar Sesion</button>
+    </div>
+
+    <div id="contenido" class="grid-container">
+    </div>
+    
+    <div id="facturas" class="grid-containertab">
+      
+      <mat-tab-group>
+        <mat-tab *ngFor="let element of medidoresList; let i = index ">
+          <ng-template mat-tab-label>{{element}}</ng-template> 
+          <div class="card grid-item item" style="width: 25rem;" *ngFor="let elemento of facturasList[i]; let j = index ">
+            <div class="card-body">
+                <h5 class="card-title">Factura {{elemento[0]}}</h5>
+                <p class="card-text">Fecha Emision: {{elemento[1]}}</p>
+                <p class="card-text">Fecha Vencimiento: {{elemento[2]}}</p>
+                <p class="card-text">Consumo: {{elemento[3]}} kWh</p>
+                <p class="card-text">Deuda: ${{elemento[4]}}</p>
+            </div>
+        </div>
+          
+        </mat-tab>
+      </mat-tab-group>
+
+    </div>
+</body>
