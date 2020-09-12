@@ -68,7 +68,7 @@ app.get('/Facturas',(req,res)=>{
     })
     
 });
-app.get('/FacturasMedidor',(req,res)=>{
+/*app.get('/FacturasMedidor',(req,res)=>{
     mysqlConnection.query('insert into FACTURA values(99969,"2020-08-18T00:00:00.000","2020-09-02T00:00:00.000",170,65,348826)'
     ,[req.query.id],(err,rows,fields)=>{
         if(!err)
@@ -77,7 +77,7 @@ app.get('/FacturasMedidor',(req,res)=>{
             console.log(err);
     })
     
-});
+});*/
 /*app.get('/USUARIO/:id',(req,res)=>{
     mysqlConnection.query('SELECT u.Cedula, f.CodigoMedidor, f.NumeroFactura FROM USUARIO u JOIN MEDIDOR m USING (Cedula) JOIN FACTURA f USING (CodigoMedidor) WHERE u.Cedula = ?'
     ,[req.params.id],(err,rows,fields)=>{
